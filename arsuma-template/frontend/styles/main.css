@@ -1,4 +1,69 @@
+body {
+  background-color: #e4e6eb;
+  color: #071C4D;
+  font-family: 'Assistant', sans-serif;
+}
+
 .navbar-brand img {
-  max-height: 50px;
+  max-height: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #071C4D;
+  font-weight: 300;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  font-weight: 600;
+  color: #071C4D !important;
+}
+
+.btn-navbar-right {
+  margin-top: -10px !important;
+  margin-bottom: -8px !important;
+  margin-right: -18px !important;
+  height: 70px;
+  border-radius: 0;
+}
+
+.btn-login {
+  background-color: #071C4D;
+  color: #FFFFFF;
+}
+
+.btn-login:hover {
+  background-color: #10368E;
+  color: #FFFFFF;
+}
+
+header {
+  padding: 173px 0px 172px;
+  margin-top: -70px;
+  background-image: url("../images/bg_hero.jpg");
+  background-size: cover;
+}
+
+header h1,
+header p {
+  color: #FFFFFF;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 22px;
+}
+
+header .btn-get-started {
+  background-color: #FC9648;
+  color: #FFFFFF;
+}
+
+header .btn-get-started:hover {
+  background-color: #FF9E53;
+  color: #FFFFFF;
 }
 /*# sourceMappingURL=main.css.map */

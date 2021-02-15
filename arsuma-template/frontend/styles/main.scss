@@ -141,6 +141,7 @@ header {
     }
 }
 
+//networks
 .section-networks {
     background-color: #FFFFFF;
     margin-top: -170px;
@@ -159,6 +160,7 @@ header {
     }
 }
 
+//testimonials
 .section-testimonial-heading {
     background: linear-gradient(#fff 0%, #f7f9ff 100%);
     padding-top: 50px;
@@ -217,5 +219,12 @@ header {
             background-color: #FAFAFA;
             color: #c3c3c3;
         }
+    }
+}
+
+//footer
+.section-footer {
+    a {
+        color: #04194A;
     }
 }

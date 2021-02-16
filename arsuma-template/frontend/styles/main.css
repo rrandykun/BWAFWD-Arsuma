@@ -74,7 +74,7 @@ header .btn-get-started:hover {
 .section-stats .stats-detail {
   padding-top: 15px;
   background-color: #FFFFFF;
-  padding-left: 50px;
+  padding-left: 40px;
 }
 
 .section-stats h2 {
@@ -204,7 +204,7 @@ header .btn-get-started:hover {
   font-weight: 200;
   font-size: 26px;
   color: #6E6E6E;
-  min-height: 160px;
+  max-height: 160px;
 }
 
 .section-testimonial-content .trip-to {
@@ -240,5 +240,9 @@ header .btn-get-started:hover {
 
 .section-footer a {
   color: #04194A;
+}
+
+.section-footer .container-fluid .row {
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

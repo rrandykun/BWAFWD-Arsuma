@@ -271,6 +271,7 @@ header .btn-get-started:hover {
 .card-details {
   padding: 30px;
   border-radius: 11px;
+  margin-bottom: 10px;
 }
 
 .card-details h1 {
@@ -286,51 +287,148 @@ header .btn-get-started:hover {
   color: #B1B1B1;
 }
 
-.features {
+.card-details .features {
   margin-top: 20px;
 }
 
-.features h3 {
+.card-details .features h3 {
   font-size: 18px;
   color: #071C4D;
   margin-bottom: 0;
 }
 
-.features p {
+.card-details .features p {
   margin-bottom: 0;
 }
 
-.description {
+.card-details .description {
   margin-left: 10px;
   overflow: hidden;
   float: left;
 }
 
-.features-image {
+.card-details .features-image {
   width: 45px;
   height: 45px;
   float: left;
 }
 
-.gallery .xzoom-container {
+.card-details .gallery .xzoom-container {
   display: block;
 }
 
-.gallery .xzoom-container .xzoom {
+.card-details .gallery .xzoom-container .xzoom {
   width: 100%;
   -webkit-box-shadow: none;
           box-shadow: none;
   margin-bottom: 10px;
 }
 
-.gallery .xzoom-thumbs .xactive {
+.card-details .gallery .xzoom-thumbs .xactive {
   border: 4px solid #1ABC9C;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.gallery .xzoom-thumbs a {
+.card-details .gallery .xzoom-thumbs a {
   text-decoration: none;
+}
+
+.card-details .member .member-image {
+  width: 40px;
+  height: 40px;
+}
+
+.card-details .trip-informations th {
+  font-weight: 300;
+  font-size: 18px;
+  color: #071C4D;
+}
+
+.card-details .trip-informations td {
+  font-weight: 300;
+  font-size: 18px;
+  color: #B1B1B1;
+}
+
+.card-details .trip-informations .text-blue {
+  color: #04194A;
+  font-weight: bold;
+}
+
+.card-details .trip-informations .text-orange {
+  color: #FC9648;
+  font-weight: bold;
+}
+
+.card-details .payment-instruction {
+  font-weight: 300px;
+  font-size: 14px;
+  color: #B1B1B1;
+}
+
+.card-details .bank .bank-item h3 {
+  font-size: 18px;
+  color: #071C4D;
+  margin-bottom: 0;
+}
+
+.card-details .bank .bank-item p {
+  margin-bottom: 0;
+}
+
+.card-details .bank .bank-item .description {
+  margin-left: 10px;
+  overflow: hidden;
+  float: left;
+}
+
+.card-details .bank .bank-item .description h3 {
+  font-weight: 400;
+}
+
+.card-details .bank .bank-item .description p {
+  font-weight: normal;
+  font-size: 16px;
+  color: #04194a;
+}
+
+.card-details .bank .bank-image {
+  width: 45px;
+  height: 45px;
+  float: left;
+}
+
+.card-details .disclaimer {
+  font-weight: 300;
+  font-size: 14px;
+  color: #B1B1B1;
+}
+
+.card-details h3 {
+  font-weight: 600;
+  font-size: 14px;
+  color: #071c4d;
+}
+
+.card-details .gj-datepicker .datepicker {
+  border-right: 0;
+}
+
+.card-details .gj-datepicker .input-group-append .btn {
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-left: auto;
+}
+
+.card-details .btn-add-now {
+  background-color: #071C4D;
+  color: #E3E3E3;
+}
+
+.card-details .btn-add-now:hover {
+  background-color: #10368E;
+  color: #E3E3E3;
 }
 
 .join-container {
@@ -339,31 +437,18 @@ header .btn-get-started:hover {
 
 .btn-join-now {
   background-color: #FC9648;
-  color: #E3E3E3;
+  color: #FFFFFF;
   border-radius: 0;
 }
 
 .btn-join-now:hover {
   background-color: #FCB278;
-  color: #E3E3E3;
+  color: #FFFFFF;
 }
 
 .card-right {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom: 0;
-}
-
-.member .member-image {
-  width: 40px;
-  height: 40px;
-}
-
-.trip-informations th {
-  font-weight: normal;
-}
-
-.trip-informations td {
-  color: #AEAEAE;
 }
 /*# sourceMappingURL=main.css.map */

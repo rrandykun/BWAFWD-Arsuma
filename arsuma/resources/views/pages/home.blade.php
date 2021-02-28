@@ -56,7 +56,7 @@
                             <div class="travel-country">MALANG</div>
                             <div class="travel-location">PANTAI NGUDEL</div>
                             <div class="travel-button mt-auto">
-                                <a href="details.html" class="btn btn-travel-details px-4">
+                                <a href="/detail" class="btn btn-travel-details px-4">
                                     View Details
                                 </a>
                             </div>
@@ -67,7 +67,7 @@
                             <div class="travel-country">MALANG</div>
                             <div class="travel-location">MASJID AGUNG JAMI'</div>
                             <div class="travel-button mt-auto">
-                                <a href="details.html" class="btn btn-travel-details px-4">
+                                <a href="/detail" class="btn btn-travel-details px-4">
                                     View Details
                                 </a>
                             </div>
@@ -78,7 +78,7 @@
                             <div class="travel-country">MALANG</div>
                             <div class="travel-location">KAMPUNG WARNA WARNI</div>
                             <div class="travel-button mt-auto">
-                                <a href="details.html" class="btn btn-travel-details px-4">
+                                <a href="/detail" class="btn btn-travel-details px-4">
                                     View Details
                                 </a>
                             </div>
@@ -89,7 +89,7 @@
                             <div class="travel-country">MALANG</div>
                             <div class="travel-location">GUNUNG BROMO</div>
                             <div class="travel-button mt-auto">
-                                <a href="details.html" class="btn btn-travel-details px-4">
+                                <a href="/detail" class="btn btn-travel-details px-4">
                                     View Details
                                 </a>
                             </div>
@@ -108,7 +108,7 @@
                         <p>Companies are trusted us<br> more than just a trip</p>
                     </div>
                     <div class="col-md-8 text-center">
-                        <img src="frontend/images/partners.png" alt="Partners" class="img-partner" />
+                        <img src="{{ url('frontend/images/partners.png')}}" alt="Partners" class="img-partner" />
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                     <div class="col-sm-66 col-md-6 col-lg-4">
                         <div class="card card-testimonial text-center">
                             <div class="testimonial-content">
-                                <img src="frontend/images/testimonial1.png" alt="User" class="mb-4 rounded-circle">
+                                <img src="{{ url('frontend/images/testimonial1.png')}}" alt="User" class="mb-4 rounded-circle">
                                 <h3 class="mb-4">Randy Arsuma P</h3>
                                 <p class="testimonial">" It was glorious and I could not stop to say wohooo for every single moment Dankeeeeee "</p>
                             </div>
@@ -142,7 +142,7 @@
                     <div class="col-sm-66 col-md-6 col-lg-4">
                         <div class="card card-testimonial text-center">
                             <div class="testimonial-content">
-                                <img src="frontend/images/testimonial2.png" alt="User" class="mb-4 rounded-circle">
+                                <img src="{{ url('frontend/images/testimonial2.png')}}" alt="User" class="mb-4 rounded-circle">
                                 <h3 class="mb-4">Muhammad A. Rasyad</h3>
                                 <p class="testimonial">" Jalan-jalan, Umma. Jalan-jalan, Buya "</p>
                             </div>
@@ -153,7 +153,7 @@
                     <div class="col-sm-66 col-md-6 col-lg-4">
                         <div class="card card-testimonial text-center">
                             <div class="testimonial-content">
-                                <img src="frontend/images/testimonial3.png" alt="User" class="mb-4 rounded-circle">
+                                <img src="{{ url('frontend/images/testimonial3.png')}}" alt="User" class="mb-4 rounded-circle">
                                 <h3 class="mb-4">Madina Rizkya</h3>
                                 <p class="testimonial">" The trip was amazing and I saw something beautiful that makes me want to discover more "</p>
                             </div>

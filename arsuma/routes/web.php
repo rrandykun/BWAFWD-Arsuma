@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\HomeController;
+
+Route::get('/', 'HomeController@index')
+    ->name('home');
+Route::get('/detail', 'DetailController@index')
+    ->name('detail');
 
 Route::prefix('admin')
     ->namespace('Admin')

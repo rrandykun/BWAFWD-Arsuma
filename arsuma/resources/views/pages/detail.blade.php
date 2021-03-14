@@ -22,53 +22,46 @@
                 <!-- content kiri -->
                 <div class="col-lg-8 pl-lg-0">
                     <div class="card card-details">
-                        <h1>Gunung Bromo</h1>
-                        <p>Kota Malang</p>
+                        <h1>{{$item->title}}</h1>
+                        <p>{{$item->location}}</p>
+                        @if ($item->galleries->count()>1)
                         <div class="gallery">
                             <div class="xzoom-container">
-                                <img src="{{ url('frontend/images/bromo.jpg')}}" alt="Gunung Bromo" class="xzoom" id="xzoom-default" xoriginal="{{ url('frontend/images/zoom.jpg')}}">
+                                <img src="{{ Storage::url($item->galleries->skip(1)->first()->image)}}" alt="Gunung Bromo" class="xzoom" id="xzoom-default" xoriginal="{{ Storage::url($item->galleries->skip(1)->first()->image)}}">
                             </div>
                             <div class="xzoom-thumbs">
-                                <a href="{{ url('frontend/images/zoom.jpg')}}">
-                                    <img src="{{ url('frontend/images/details.jpg')}}" alt="" class="xzoom-gallery" width="128" xpreview="{{ url('frontend/images/bromo.jpg')}}">
-                                </a>
-                                <a href="{{ url('frontend/images/zoom.jpg')}}">
-                                    <img src="{{ url('frontend/images/details.jpg')}}" alt="" class="xzoom-gallery" width="128" xpreview="{{ url('frontend/images/bromo.jpg')}}">
-                                </a>
-                                <a href="{{ url('frontend/images/zoom.jpg')}}">
-                                    <img src="{{ url('frontend/images/details.jpg')}}" alt="" class="xzoom-gallery" width="128" xpreview="{{ url('frontend/images/bromo.jpg')}}">
-                                </a>
-                                <a href="{{ url('frontend/images/zoom.jpg')}}">
-                                    <img src="{{ url('frontend/images/details.jpg')}}" alt="" class="xzoom-gallery" width="128" xpreview="{{ url('frontend/images/bromo.jpg')}}">
-                                </a>
-                                <a href="{{ url('frontend/images/zoom.jpg')}}">
-                                    <img src="{{ url('frontend/images/details.jpg')}}" alt="" class="xzoom-gallery" width="128" xpreview="{{ url('frontend/images/bromo.jpg')}}"></a>
+                                @foreach ($item->galleries->skip(1) as $gallery)
+                                    <a href="{{ Storage::url($gallery->image)}}">
+                                        <img src="{{ Storage::url($gallery->image)}}" alt="" class="xzoom-gallery" width="128"  xpreview="{{ Storage::url($gallery->image)}}">
+                                    </a>
+                                @endforeach
                             </div>
                         </div>
+                        @endif
                         <h2>Tentang Wisata</h2>
-                        <p>Gunung Bromo (dari bahasa Sanskerta: Brahma, salah seorang Dewa Utama dalam agama Hindu) atau dalam bahasa Tengger dieja "Brama", adalah sebuah gunung berapi aktif di Jawa Timur, Indonesia. Gunung ini memiliki ketinggian 2.329
-                            meter di atas permukaan laut.</p>
-                        <p>Bentuk tubuh Gunung Bromo bertautan antara lembah dan ngarai dengan kaldera seluas sekitar 10 kilometer persegi. </p>
+                        <p>
+                            {!!$item->about!!}
+                        </p>
                         <div class="features row">
                             <div class="col-md-4">
                                 <img src="{{ url('frontend/images/ic_event.png')}}" alt="" class="features-image">
                                 <div class="description">
                                     <h3>Featured Event</h3>
-                                    <p>Berkuda</p>
+                                    <p>{{$item->featured_event}}</p>
                                 </div>
                             </div>
                             <div class="col-md-4 border-left">
                                 <img src="{{ url('frontend/images/ic_bahasa.png')}}" alt="" class="features-image">
                                 <div class="description">
                                     <h3>Language</h3>
-                                    <p>Bahasa Indonesia</p>
+                                    <p>{{$item->language}}</p>
                                 </div>
                             </div>
                             <div class="col-md-4 border-left">
                                 <img src="{{ url('frontend/images/ic_food.png')}}" alt="" class="features-image">
                                 <div class="description">
                                     <h3>Foods</h3>
-                                    <p>Local Foods</p>
+                                    <p>{{$item->food}}</p>
                                 </div>
                             </div>
                         </div>
@@ -92,31 +85,38 @@
                             <tr>
                                 <th width="50%">Date of Departure</th>
                                 <td width="50%" class="text-right">
-                                    22 March 2021
+                                    {{\Carbon\Carbon::create($item->departure_date)->format('F n, Y')}}
                                 </td>
                             </tr>
                             <tr>
                                 <th width="50%">Duration</th>
                                 <td width="50%" class="text-right">
-                                    4D 3N
+                                    {{$item->duration}}
                                 </td>
                             </tr>
                             <tr>
                                 <th width="50%">Type of Trip</th>
                                 <td width="50%" class="text-right">
-                                    Open Trip
+                                    {{$item->type}}
                                 </td>
                             </tr>
                             <tr>
                                 <th width="50%">Price</th>
                                 <td width="50%" class="text-right">
-                                    Rp. 100.000 / person
+                                    Rp. {{$item->price}},00 / person
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="join-container">
-                        <a href="/checkout" class="btn btn-block btn-join-now mt-3 py-2">Join Now</a>
+                        @auth
+                            <form action="" method="POST">
+                                <button class="btn btn-block btn-join-now mt-3 py-2" type="submit">Join Now</button>
+                            </form>
+                        @endauth
+                        @guest
+                            <a href="{{route('login')}}" class="btn btn-block btn-join-now mt-3 py-2">Login or Register to Join</a>
+                        @endguest
                     </div>
                 </div>
             </div>

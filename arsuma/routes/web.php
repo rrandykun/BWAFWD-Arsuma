@@ -25,7 +25,7 @@ Route::get('/detail/{slug}', 'DetailController@index')
 
 
 Route::post('/checkout/{id}', 'CheckoutController@process')
-    ->name('checkout')
+    ->name('checkout-process')
     ->middleware(['auth', 'verified']);
 
 Route::get('/checkout/{id}', 'CheckoutController@index')
@@ -36,7 +36,7 @@ Route::post('/checkout/create/{detail_id}', 'CheckoutController@create')
     ->name('checkout-create')
     ->middleware(['auth', 'verified']);
 
-Route::get('/checkout/remove/{detail_id}', 'CheckoutController@remove')
+Route::get('/checkout/remove/{id}', 'CheckoutController@remove')
     ->name('checkout-remove')
     ->middleware(['auth', 'verified']);
 

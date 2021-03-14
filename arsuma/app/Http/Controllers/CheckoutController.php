@@ -14,7 +14,7 @@ class CheckoutController extends Controller
 {
     public function index(Request $request, $id)
     {
-        $item = Transaction::with(['details' . 'travel_package', 'user'])->findOrFail($id);
+        $item = Transaction::with(['details', 'travel_package', 'user'])->findOrFail($id);
         return view('pages.checkout', [
             'item' => $item
         ]);
@@ -23,6 +23,7 @@ class CheckoutController extends Controller
     public function process(Request $request, $id)
     {
         $travel_package = TravelPackage::findOrFail($id);
+
         $transaction = Transaction::create([
             'travel_packages_id' => $id,
             'users_id' => Auth::user()->id,
@@ -32,7 +33,7 @@ class CheckoutController extends Controller
         ]);
 
         TransactionDetail::create([
-            'transaction_id' => $transaction->id,
+            'transactions_id' => $transaction->id,
             'username' => Auth::user()->username,
             'nationality' => 'ID',
             'is_visa' => false,
@@ -42,11 +43,11 @@ class CheckoutController extends Controller
         return redirect()->route('checkout', $transaction->id);
     }
 
-    public function remove(Request $request, $detail_id)
+    public function remove(Request $request, $id)
     {
-        $item = TransactionDetail::findOrFail($detail_id);
+        $item = TransactionDetail::findOrFail($id);
 
-        $transaction = Transaction::with(['details', 'travel_packages'])->findOrFail($item->transaction_id);
+        $transaction = Transaction::with(['details', 'travel_package'])->findOrFail($item->transactions_id);
 
         if ($item->is_visa) {
             $transaction->transaction_total -= 100000;
@@ -56,20 +57,21 @@ class CheckoutController extends Controller
         $transaction->transaction_total -= $transaction->travel_package->price;
 
         $transaction->save();
+        $item->delete();
 
-        return redirect()->route('checkout', $item->transaction_id);
+        return redirect()->route('checkout', $item->transactions_id);
     }
 
     public function create(Request $request, $detail_id)
     {
         $request->validate([
-            'username' => 'required|string|exists:users, username',
+            'username' => 'required|string|exists:users,username',
             'is_visa' => 'required|boolean',
             'doe_passport' => 'required'
         ]);
 
         $data = $request->all();
-        $data['transaction_id'] = $detail_id;
+        $data['transactions_id'] = $detail_id;
 
         TransactionDetail::create($data);
 

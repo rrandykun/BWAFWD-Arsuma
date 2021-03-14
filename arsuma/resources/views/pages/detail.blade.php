@@ -103,14 +103,15 @@
                             <tr>
                                 <th width="50%">Price</th>
                                 <td width="50%" class="text-right">
-                                    Rp. {{$item->price}},00 / person
+                                    Rp. {{substr($item->price, 0, 3)}}.{{substr($item->price, 3, 3)}}, 00 / person
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="join-container">
                         @auth
-                            <form action="" method="POST">
+                            <form action="{{route('checkout-process', $item->id)}}" method="POST">
+                                @csrf
                                 <button class="btn btn-block btn-join-now mt-3 py-2" type="submit">Join Now</button>
                             </form>
                         @endauth

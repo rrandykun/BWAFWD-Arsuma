@@ -3,7 +3,7 @@
     <nav class="row navbar navbar-expand-lg navbar-light bg-white">
         <div class="navbar-nav ml-auto mr-auto mr-sm-auto mr-lg-0 mr-md auto">
             <a href="/" class="navbar-brand">
-                <img src="{{ url('frontend/images/Logo Arsuma.png')}}" alt="">
+                <img src="{{ url('frontend/images/logo_arsuma.png')}}" alt="">
             </a>
         </div>
         <div class="ul navbar-nav mr-auto d-none d-lg-block">

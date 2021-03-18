@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="text-center">
-                            <img src="{{ url('frontend/images/Logo Arsuma.png')}}" alt="" class="w-50 mb-4 mt-2">
+                            <img src="{{ url('frontend/images/logo_arsuma.png')}}" alt="" class="w-50 mb-4 mt-2">
                         </div>
                         <form action="{{ route('login') }}" method="POST">
                             @csrf

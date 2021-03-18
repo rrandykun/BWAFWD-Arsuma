@@ -2,7 +2,7 @@
 <div class="container">
     <nav class="row navbar navbar-expand-lg navbar-light bg-white">
         <a href="/" class="navbar-brand">
-            <img src="{{ url('frontend/images/Logo Arsuma.png')}}" alt="Logo ARSUMA" />
+            <img src="{{ url('frontend/images/logo_arsuma.png')}}" alt="Logo ARSUMA" />
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
             <span class="navbar-toggler-icon"></span>
